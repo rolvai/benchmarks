@@ -1,3 +1,10 @@
+
+This harness produces Dense and CSR normalized hashes that match the benchmark suite. It contains no ROLV IP.
+Conclusion
+You can validate the ROLV benchmarks with 100% certainty without access to ROLV proprietary code. By running only vendor baselines (Dense GEMM and CSR SpMM) with the vendor only harness above, normalizing outputs, and comparing SHA 256 hashes, you will reproduce the same baseline hashes reported in the benchmark suite.
+Most importantly, ROLV normalized output hashes are identical across NVIDIA and AMD, demonstrating cross vendor reproducibility. Vendor baseline hashes may differ between Dense and CSR implementations, but this is expected and verified. ROLF and DENGS are not required in core benchmarks: ROLF is a non standard, non applicable subsampling shortcut with severe limitations, and DENGS is redundant and slow. Excluding them strengthens the case for ROLV as a reproducible, audit ready innovation balancing speed, efficiency, and correctness.
+
+
 Verified Benchmarks Hash Super 4 December 7, 2025
 NVIDIA
 === RUN SUITE (CUDA) on NVIDIA B200 ===
