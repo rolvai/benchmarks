@@ -1,5 +1,7 @@
 Master Validation Document for ROLV BenchmarksDate: December 16, 2025
+
 Purpose
+
 This master document consolidates validation procedures for ROLV benchmarks across major processor types: GPU (NVIDIA/AMD), CPU (x86-64), and Apple Silicon Mac (M-series with MPS). It enables independent verification of baseline correctness (Dense GEMM, CSR/COO SpMM) and reproducibility without access to proprietary ROLV code.  The key anchor is the consistent ROLV normalized output hash:
 8dbe5f139fd946d4cd84e8cc612cd9f68cbc87e394457884acc0c5dad56dd8dd
 This hash remains identical across all platforms (GPU, CPU, Mac MPS), proving backend-agnostic reproducibility.  Baselines (Dense, CSR, COO) are fully reproducible via the provided harnesses. Minor numeric differences between Dense and sparse formats are expected due to library paths but are verified and documented.  Auxiliary methods like ROLF (subsampling) and DENGS (dense variants) are excluded from core reporting: ROLF introduces bias and non-reproducibility; DENGS is redundant and slower than standard Dense.Transparent Timing and Energy Measurement MethodologyAll harnesses use identical, fair timing and energy proxy methods adapted per platform.  Key Fairness Safeguards:  Deterministic execution (fixed seed 123456, deterministic algorithms).  
