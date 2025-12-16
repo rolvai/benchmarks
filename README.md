@@ -1,6 +1,8 @@
 Validation of ROLV Benchmarks and Clarification of Baselines
 Date: December 15, 2025 
+
 Purpose
+
 This memo accompanies the benchmark suite results - SEE BELOW (“Verified Benchmarks AMD MI300X GPU, Nvidia B200 GPU and Intel Xeon CPU”) and explains how you can validate the correctness and reproducibility of the reported results without access to ROLV proprietary code. It clarifies why auxiliary baselines such as ROLF and DENGS are not required in core reporting and highlights that ROLV normalized output hashes are identical across vendors (NVIDIA B200 and AMD MI300X), proving backend agnostic reproducibility.
 Validation Anchors
 1.	Deterministic Runtime
